@@ -83,23 +83,31 @@
   }
 
   .objectpage__hero {
-    max-width: 90vw;
+    max-width: 95vw;
   }
 
   .objectpage__hero-title {
-    width: 90vw;
+    max-width: 90vw;
     text-align: center;
     margin-left: auto;
     margin-right: auto;
     transform: none;
   }
 
+  .objectpage__hero-title h1 {
+    font-size: 20px;
+  }
+
   .objectpage__description {
     max-width: 90vw;
-    font-size: 35px;
+    font-size: 15px;
   }
 
   .objectpage__back-button {
     display: none;
+  }
+
+  .objectpage__main-container {
+    padding: 0 10px;
   }
 }
