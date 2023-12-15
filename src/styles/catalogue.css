@@ -1,0 +1,48 @@
+.catalogue__container {
+  min-height: 100vh;
+  display: flex;
+  flex-flow: column;
+}
+
+.catalogue__loading {
+  font-family: "BianZhiDai-comic";
+  font-size: 40px;
+  min-width: 100vw;
+  text-align: center;
+  margin: auto;
+}
+
+.catalogue__gallery {
+  max-width: 90vw;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.catalogue__gallery img:hover {
+  opacity: 0.8;
+}
+
+.catalogue__results-information {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 5vw;
+}
+
+.pagination {
+  display: flex;
+}
+
+.pagination li {
+  padding-right: 10px;
+  list-style: none;
+}
+
+.catalogue__gallery img {
+  width: 250px;
+}
+
+@media (max-width: 600px) {
+  .catalogue__gallery img {
+    width: 90vw;
+  }
+}

@@ -1,0 +1,68 @@
+.home__container {
+  min-height: 100vh;
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;
+}
+
+.home__search-container {
+  width: 100vw;
+  min-height: 80vh;
+  display: flex;
+  flex-flow: column;
+}
+
+.home__search-container h1 {
+  display: none;
+  text-align: center;
+  font-size: 50px;
+}
+
+.home__search-bar {
+  width: 40vw;
+  margin: auto;
+  text-align: center;
+}
+
+.home__search-bar input {
+  width: 100%;
+  font-size: 2em;
+  border: none;
+  border-bottom: 2px solid pink;
+}
+
+.home__incentives {
+  display: none;
+}
+
+.home__incentives-container {
+  display: flex;
+  justify-content: center;
+  max-width: 60vw;
+  min-height: 30vh;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.home__incentives-box {
+  display: flex;
+  height: 20vh;
+  width: 20%;
+  margin: 30px;
+  border: pink 2px solid;
+  background: pink;
+  justify-content: space-evenly;
+}
+
+input:focus {
+  outline: none;
+}
+
+input {
+  font-family: "BianZhiDai-comic", sans-serif;
+}
+
+@media (max-width: 750px) {
+  input::placeholder {
+  }
+}

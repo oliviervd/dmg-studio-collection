@@ -1,0 +1,14 @@
+header {
+  display: flex;
+  width: 100%;
+}
+
+header h1 {
+  margin-left: 30px;
+}
+
+@media (max-width: 900px) {
+  h1 {
+    font-size: 60px;
+  }
+}

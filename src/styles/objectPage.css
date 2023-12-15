@@ -1,0 +1,105 @@
+.container {
+  display: flex;
+  flex-flow: column;
+}
+
+.objectpage__back-button {
+  margin-left: 30px;
+}
+
+.objectpage__main-container {
+  padding: 0 30px;
+}
+
+.objectpage__hero {
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 20vw;
+}
+
+.objectpage__hero img {
+  width: 100%;
+}
+
+.objectpage__hero .image__float-left-1 {
+  position: absolute;
+  max-width: 10vw;
+  top: 26vh;
+  left: 20vw;
+}
+
+.objectpage__hero .image__float-left-2 {
+  position: absolute;
+  max-width: 5vw;
+  top: 46vh;
+  transform: translateY();
+  left: 10vw;
+}
+
+.objectpage__hero .image__float-right-1 {
+  position: absolute;
+  max-width: 10vw;
+  top: 26vh;
+  right: 20vw;
+}
+
+.objectpage__hero-title {
+  width: 30vw;
+  transform: translateX(-5vw);
+  position: relative;
+}
+
+.objectpage__hero h1 {
+  transform: translateY();
+  line-height: 1;
+  font-size: 70px;
+  text-align: center;
+}
+
+.objectpage__hero .id {
+  position: absolute;
+  font-size: 30px;
+  transform: translateY(-60px);
+  right: 0;
+  color: pink;
+  font-family: "BianZhiDai-comic";
+}
+
+.objectpage__description {
+  font-family: "Karrik-regular";
+  font-size: 20px;
+  max-width: 30vw;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (max-width: 1000px) {
+  .objectpage__hero .image__float-left-1,
+  .objectpage__hero .image__float-left-2,
+  .objectpage__hero .image__float-right-1 {
+    display: none;
+  }
+
+  .objectpage__hero {
+    max-width: 90vw;
+  }
+
+  .objectpage__hero-title {
+    width: 90vw;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    transform: none;
+  }
+
+  .objectpage__description {
+    max-width: 90vw;
+    font-size: 35px;
+  }
+
+  .objectpage__back-button {
+    display: none;
+  }
+}

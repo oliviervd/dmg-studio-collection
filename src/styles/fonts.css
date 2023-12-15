@@ -1,0 +1,26 @@
+@font-face {
+  font-family: "BianZhiDai-base";
+  src: local("BianZhiDai-base"), url(../assets/fonts/BianZhiDai-base.woff);
+}
+
+@font-face {
+  font-family: "BianZhiDai-comic";
+  src: local("BianZhiDai-comic"), url(../assets/fonts/BianZhiDai-comic.woff);
+}
+
+@font-face {
+  font-family: "Karrik-regular";
+  src: local("Karrik-Regular", url(../assets/fonts/Karrik-Regular.ttf));
+}
+
+h1 {
+  font-family: "BianZhiDai-comic";
+}
+
+a {
+  color: #551a8b;
+}
+
+a:hover {
+  color: pink;
+}
