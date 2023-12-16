@@ -1,3 +1,8 @@
+body {
+  margin: 0 0;
+  padding: 0 0;
+}
+
 .home__container {
   min-height: 100vh;
   display: flex;
@@ -9,7 +14,7 @@
 
 .home__search-container {
   width: 100vw;
-  min-height: 80vh;
+  min-height: 100vh;
   display: flex;
   flex-flow: column;
 }
@@ -31,6 +36,41 @@
   font-size: 2em;
   border: none;
   border-bottom: 2px solid pink;
+}
+
+.home__hero-image {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  padding: 0 0;
+  background-image: url("https://api.collectie.gent/iiif/image/iiif/2/dc2342fbcfab11bafa6a3307edeca6ca-transcode-4605$1.jpg/695,703,3004,1551/full/0/default.jpg");
+}
+
+.home__hero-image div {
+  position: relative;
+  left: 50%;
+  transform: translateY(-50%);
+  transform: translateX(-50%);
+
+  max-width: 80vw;
+}
+
+.home__hero-image div h1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: pink;
+  --webkit-font-stroke: 2px black;
+  font-size: 5em;
+}
+
+.home__hero-image div h1 a {
+  color: pink;
+  text-decoration: underline;
+}
+.home__hero-image div h1 a:hover {
+  color: pink;
 }
 
 .home__incentives {
@@ -66,7 +106,7 @@ input {
 
 @media (max-width: 750px) {
   .home__search-bar input::placeholder {
-    font-size: 2vh; 
+    font-size: 2vh;
     text-align: center;
   }
 

@@ -45,11 +45,13 @@ export function Home() {
           </p>
         </div>
       </section>
-      <section className="home__incentives">
-        <div className="home__incentives-container">
-          <div className="home__incentives-box"></div>
-          <div className="home__incentives-box"></div>
-          <div className="home__incentives-box"></div>
+      <section className="home__hero-image">
+        <div>
+          <h1>
+            whether printed, woven or glazed; patterns play an important role
+            for many designs. Explore parts of the collection spanning ceramics,
+            textiles and sivlerware.
+          </h1>
         </div>
       </section>
       <Footer />
