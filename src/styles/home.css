@@ -3,6 +3,8 @@
   display: flex;
   flex-flow: column;
   justify-content: space-between;
+  overflow-x: hidden;
+  max-width: 100vw;
 }
 
 .home__search-container {
