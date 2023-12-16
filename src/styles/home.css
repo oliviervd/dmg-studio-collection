@@ -71,7 +71,7 @@ input {
   }
 
   .home__search-bar {
-    max-width: 90vw;
+    width: 90vw;
     margin: auto;
     text-align: center;
   }
