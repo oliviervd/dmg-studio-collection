@@ -8,6 +8,9 @@ header h1 {
 }
 
 @media (max-width: 1100px) {
+  header {
+    display: block;
+  }
   header h1 {
     font-size: 30px;
     line-height: 1;
