@@ -17,9 +17,13 @@ h1 {
   font-family: "BianZhiDai-comic";
 }
 
+h2 {
+  font-family: "BianZhiDai-comic";
+}
+
 a {
   color: #551a8b;
-  font-family:BianZhiDai-comic;
+  font-family: BianZhiDai-comic;
 }
 
 a:hover {

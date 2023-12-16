@@ -5,6 +5,7 @@ import { Header } from "./components/Header.jsx";
 import { Home } from "./pages/home.tsx";
 import { Catalogue } from "./pages/catalogue.js";
 import { ObjectPage } from "./pages/object.js";
+import { Patterns } from "./pages/patterns.js";
 
 import { NotFound } from "./pages/_404.jsx";
 import "./styles/fonts.css";
@@ -28,6 +29,7 @@ export function App() {
             <Route path="/" component={Home} />
             <Route path="/catalogue" component={Catalogue} />
             <Route path="/object/:id" component={ObjectPage} />
+            <Route path="/patterns" component={Patterns} />
             <Route default component={NotFound} />
           </Router>
         </main>

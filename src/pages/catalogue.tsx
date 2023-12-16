@@ -71,7 +71,7 @@ export function Catalogue() {
               paginate={paginate}
             />
           </div>
-          <ImageMasonry objects={currentObjects} />
+          <ImageMasonry objects={currentObjects} query={true} />
         </section>
       )}
       {loading && <div className="catalogue__loading">loading..</div>}

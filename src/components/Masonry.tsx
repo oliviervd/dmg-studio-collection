@@ -1,6 +1,6 @@
 import Masonry from "react-masonry-component";
 
-export function ImageMasonry({ objects, loading }) {
+export function ImageMasonry({ objects, loading, query }) {
   // masonry options
   const masonryOptions = {
     gutter: 20,
@@ -19,17 +19,32 @@ export function ImageMasonry({ objects, loading }) {
     >
       {objects.map((o, index) => (
         <div style={styles}>
-          <a href={`/object/${o.item.source.objectNumber}`}>
-            {o.item.source.iiif_image_uris[0] && (
-              <img
-                src={o.item.source.iiif_image_uris[0].replace(
-                  "/full/0/default.jpg",
-                  "/500,/0/default.jpg",
-                )}
-                alt={`photograph of ${o.item.title} from the collection of Design Museum Gent`}
-              />
-            )}
-          </a>
+          {query && (
+            <a href={`/object/${o.item.source.objectNumber}`}>
+              {o.item.source.iiif_image_uris[0] && (
+                <img
+                  src={o.item.source.iiif_image_uris[0].replace(
+                    "/full/0/default.jpg",
+                    "/500,/0/default.jpg",
+                  )}
+                  alt={`photograph of ${o.item.title} from the collection of Design Museum Gent`}
+                />
+              )}
+            </a>
+          )}
+          {!query && (
+            <a href={`/object/${o.source.objectNumber}`}>
+              {o.source.pattern && (
+                <img
+                  src={o.source.pattern.replace(
+                    "/full/0/default.jpg",
+                    "/500,/0/default.jpg",
+                  )}
+                  alt={`photograph of from the collection of Design Museum Gent`}
+                />
+              )}
+            </a>
+          )}
         </div>
       ))}
     </Masonry>

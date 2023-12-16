@@ -7,7 +7,12 @@ export function Header() {
     <header>
       <a href="/">
         <h1>studio collection</h1>
-      </a>
+      </a>{" "}
+      <nav>
+        <a href="">
+          <h2>about</h2>
+        </a>
+      </nav>
     </header>
   );
 }
