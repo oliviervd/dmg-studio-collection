@@ -63,11 +63,13 @@ input {
 }
 
 @media (max-width: 750px) {
-  input::placeholder {
+  .home__search-bar input::placeholder {
+    font-size: 2vh; 
+    text-align: center;
   }
 
   .home__search-bar {
-    width: 90vw;
+    max-width: 90vw;
     margin: auto;
     text-align: center;
   }
