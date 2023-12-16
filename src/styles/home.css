@@ -62,7 +62,7 @@ body {
   text-align: center;
   color: pink;
   --webkit-font-stroke: 2px black;
-  font-size: 5em;
+  font-size: 4vw;
 }
 
 .home__hero-image div h1 a {
@@ -114,5 +114,9 @@ input {
     width: 90vw;
     margin: auto;
     text-align: center;
+  }
+
+  .home__hero-image div h1 {
+    font-size: 5vw;
   }
 }
