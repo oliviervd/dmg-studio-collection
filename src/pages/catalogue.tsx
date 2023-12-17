@@ -1,5 +1,5 @@
 import { Header } from "../components/Header";
-import { useEffect, useState } from "preact/hooks";
+import { useEffect, useState, useRef } from "preact/hooks";
 import { fetchAllObjects, wildCard } from "../utils/hooks/filter/queries";
 import { ImageMasonry } from "../components/Masonry";
 import { Pagination } from "../components/Pagination";
@@ -10,7 +10,9 @@ export function Catalogue() {
   let currentObjects = [];
   let _results = [];
   let _objects = fetchAllObjects();
+  const ref = useRef(null);
 
+  const [imageWidth, setImageWidth] = useState(200);
   const [loading, setLoading] = useState(true);
   const [currentPage, setCurrentPage] = useState(1);
   const [objectsPerPage, setObjectsPerPage] = useState(30);
@@ -45,6 +47,14 @@ export function Catalogue() {
     setCurrentPage((prevPage) => pageNumber);
   };
 
+  const handleSliderChange = (event) => {
+    setImageWidth(event.target.value);
+  };
+
+  const handleScroll = () => {
+    ref.current?.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
     <div className={"catalogue__container"}>
       <Header />
@@ -57,13 +67,28 @@ export function Catalogue() {
                 {searchParam}
               </span>
             </p>
+            <div className={"catalogue__results-slider"}>
+              <input
+                class={"slider"}
+                type="range"
+                step={"50"}
+                min="200"
+                max="500"
+                id="widthRange"
+                onChange={handleSliderChange}
+              />
+            </div>
             <Pagination
               objectsPerPage={objectsPerPage}
               totalObjects={_results.length}
               paginate={paginate}
             />
           </div>
-          <ImageMasonry objects={currentObjects} query={true} />
+          <ImageMasonry
+            objects={currentObjects}
+            query={true}
+            width={imageWidth}
+          />
         </section>
       )}
       {loading && <div className="catalogue__loading">loading..</div>}

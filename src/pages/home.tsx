@@ -1,4 +1,4 @@
-import { useEffect } from "preact/hooks";
+import { useEffect, useRef } from "preact/hooks";
 import { Header } from "../components/Header";
 import { Footer } from "../components/Footer";
 import useObjectsQuery from "../utils/hooks/useObjectQuery";
@@ -6,6 +6,7 @@ import useObjectsQuery from "../utils/hooks/useObjectQuery";
 export function Home() {
   let url = window.location.href;
   let params = new URLSearchParams(url.search);
+  const ref = useRef(null);
 
   // listen to query and write away as queryparam in URL
   useEffect(() => {
@@ -29,6 +30,11 @@ export function Home() {
     console.error(e);
   }
 
+  const handleScrollTo = (id) => {
+    const element = document.getElementById(id);
+    element.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
     <div className="home__container">
       <Header />
@@ -44,8 +50,14 @@ export function Home() {
             <a href="/catalogue?search=none">or browse the full catalogue</a>
           </p>
         </div>
+        <div
+          onClick={() => {
+            handleScrollTo("home__hero-patterns");
+          }}
+          className="scroll-to"
+        ></div>
       </section>
-      <section className="home__hero-image">
+      <section className="home__hero-image" id="home__hero-patterns">
         <div className={"container"}>
           <h1>
             whether printed, woven or glazed; patterns play an important role in

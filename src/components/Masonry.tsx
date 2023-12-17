@@ -1,6 +1,7 @@
 import Masonry from "react-masonry-component";
+import { useState } from "preact/hooks";
 
-export function ImageMasonry({ objects, loading, query }) {
+export function ImageMasonry({ objects, loading, query, width }) {
   // masonry options
   const masonryOptions = {
     gutter: 20,
@@ -28,6 +29,7 @@ export function ImageMasonry({ objects, loading, query }) {
                     "/500,/0/default.jpg",
                   )}
                   alt={`photograph of ${o.item.title} from the collection of Design Museum Gent`}
+                  style={{ width: width + "px" }}
                 />
               )}
             </a>
@@ -41,6 +43,7 @@ export function ImageMasonry({ objects, loading, query }) {
                     "/500,/0/default.jpg",
                   )}
                   alt={`photograph of from the collection of Design Museum Gent`}
+                  style={{ width: width + "px" }}
                 />
               )}
             </a>

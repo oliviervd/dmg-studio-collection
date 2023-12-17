@@ -3,7 +3,7 @@ import {
   fetchAllObjects,
   fetchObjectWithID,
 } from "../utils/hooks/filter/queries";
-import { useState } from "preact/hooks";
+import { useState, useRef } from "preact/hooks";
 
 export function ObjectPage() {
   const [imageModal, setImageModal] = useState(false);
@@ -11,6 +11,7 @@ export function ObjectPage() {
 
   let _object;
   let _objects = fetchAllObjects();
+  const ref = useRef(null);
 
   let _id = window.location.href.split("/")[4];
   if (_objects) {
@@ -22,6 +23,10 @@ export function ObjectPage() {
     setCurrentImage(src); // set current image;
     window.scrollTo({ top: 0, behavior: "smooth" });
   }
+
+  const handleScroll = () => {
+    ref.current?.scrollIntoView({ behavior: "smooth" });
+  };
 
   return (
     <div className={"container"}>
@@ -40,7 +45,10 @@ export function ObjectPage() {
           <div className={"objectpage__hero"}>
             <img
               onClick={() => openImageModal(_object.source.iiif_image_uris[0])}
-              src={_object.source.iiif_image_uris[0]}
+              src={_object.source.iiif_image_uris[0].replace(
+                "/full/0/default.jpg",
+                "/1000,/0/default.jpg",
+              )}
             />
             <div className={"objectpage__hero-title"}>
               <p className={"id"}>{_id}</p>
@@ -52,7 +60,10 @@ export function ObjectPage() {
                   openImageModal(_object.source.iiif_image_uris[1])
                 }
                 className="image__float-left-1"
-                src={_object.source.iiif_image_uris[1]}
+                src={_object.source.iiif_image_uris[1].replace(
+                  "/full/0/default.jpg",
+                  "/1000,/0/default.jpg",
+                )}
               />
             )}
             {_object.source.iiif_image_uris[2] && (
@@ -61,7 +72,10 @@ export function ObjectPage() {
                   openImageModal(_object.source.iiif_image_uris[2])
                 }
                 className="image__float-right-1"
-                src={_object.source.iiif_image_uris[2]}
+                src={_object.source.iiif_image_uris[2].replace(
+                  "/full/0/default.jpg",
+                  "/1000,/0/default.jpg",
+                )}
               />
             )}
             {/*
