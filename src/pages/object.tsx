@@ -3,20 +3,30 @@ import {
   fetchAllObjects,
   fetchObjectWithID,
 } from "../utils/hooks/filter/queries";
+import { useState } from "preact/hooks";
 
 export function ObjectPage() {
+  const [imageModal, setImageModal] = useState(false);
+  const [currentImage, setCurrentImage] = useState(null);
+
   let _object;
   let _objects = fetchAllObjects();
-  console.log(_objects);
+
   let _id = window.location.href.split("/")[4];
   if (_objects) {
     _object = fetchObjectWithID(_objects, _id);
-    console.log(_object);
+  }
+
+  function openImageModal(src) {
+    setImageModal(true); // open image modal
+    setCurrentImage(src); // set current image;
+    window.scrollTo({ top: 0, behavior: "smooth" });
   }
 
   return (
     <div className={"container"}>
       <Header />
+
       {window.history && (
         <div
           className={"objectpage__back-button"}
@@ -28,19 +38,28 @@ export function ObjectPage() {
       {_object && (
         <section className={"objectpage__main-container"}>
           <div className={"objectpage__hero"}>
-            <img src={_object.source.iiif_image_uris[0]} />
+            <img
+              onClick={() => openImageModal(_object.source.iiif_image_uris[0])}
+              src={_object.source.iiif_image_uris[0]}
+            />
             <div className={"objectpage__hero-title"}>
               <p className={"id"}>{_id}</p>
               <h1>{_object.title}</h1>
             </div>
             {_object.source.iiif_image_uris[1] && (
               <img
+                onClick={() =>
+                  openImageModal(_object.source.iiif_image_uris[1])
+                }
                 className="image__float-left-1"
                 src={_object.source.iiif_image_uris[1]}
               />
             )}
             {_object.source.iiif_image_uris[2] && (
               <img
+                onClick={() =>
+                  openImageModal(_object.source.iiif_image_uris[2])
+                }
                 className="image__float-right-1"
                 src={_object.source.iiif_image_uris[2]}
               />
@@ -56,6 +75,28 @@ export function ObjectPage() {
           </div>
           <div>
             <p className={"objectpage__description"}>{_object.description}</p>
+          </div>
+          <div
+            id="image-gallery__modal"
+            className="objectpage__image-modal"
+            style={{ display: imageModal ? "block" : "none" }}
+          >
+            {" "}
+            <div className="image-gallery__modal-box">
+              <img id="img01" src={currentImage} />
+            </div>
+            <div
+              id="close"
+              className="image-gallery__modal-close"
+              onClick={() => {
+                setImageModal(false);
+                document
+                  .getElementById("image-gallery")
+                  .scrollIntoView({ behavior: "smooth" });
+              }}
+            >
+              X
+            </div>
           </div>
         </section>
       )}

@@ -17,6 +17,7 @@ body {
   min-height: 100vh;
   display: flex;
   flex-flow: column;
+  transform: translateY(-10%);
 }
 
 .home__search-container h1 {
