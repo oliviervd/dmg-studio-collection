@@ -9,8 +9,8 @@
 }
 
 @font-face {
-  font-family: "Karrik-regular";
-  src: local("Karrik-Regular", url(../assets/fonts/Karrik-Regular.ttf));
+  font-family: "Karrik-Regular";
+  src: local("Karrik-Regular"), url(../assets/fonts/Karrik-Regular.woff);
 }
 
 h1 {
@@ -32,4 +32,8 @@ a:hover {
 
 button {
   font-family: BianZhiDai-base;
+}
+
+p {
+  font-family: "Karrik-Regular";
 }

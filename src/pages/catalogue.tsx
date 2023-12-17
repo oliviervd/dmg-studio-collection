@@ -43,14 +43,6 @@ export function Catalogue() {
   // change objects (pagination)
   const paginate = (pageNumber) => {
     setCurrentPage((prevPage) => pageNumber);
-    /*
-    const existingParams = new URLSearchParams(window.location.search);
-    window.history.pushState(
-      {},
-      "",
-      `?${existingParams.toString()}?page=${pageNumber}`,
-    );
-    */
   };
 
   return (
