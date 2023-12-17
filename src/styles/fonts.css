@@ -23,9 +23,13 @@ h2 {
 
 a {
   color: #551a8b;
-  font-family: BianZhiDai-comic;
+  font-family: "BianZhiDai-comic";
 }
 
 a:hover {
   color: pink;
+}
+
+button {
+  font-family: BianZhiDai-base;
 }

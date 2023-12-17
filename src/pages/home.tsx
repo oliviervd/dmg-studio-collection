@@ -46,12 +46,15 @@ export function Home() {
         </div>
       </section>
       <section className="home__hero-image">
-        <div>
+        <div className={"container"}>
           <h1>
-            whether printed, woven or glazed; patterns play an important role
-            for many designs. Explore parts of the collection spanning ceramics,
-            textiles and sivlerware.
+            whether printed, woven or glazed; patterns play an important role in
+            design. Explore parts of the collection spanning ceramics, textiles
+            and sivlerware.
           </h1>
+          <div className={"link-box"}>
+            <a href="/patterns">start exploring</a>
+          </div>
         </div>
       </section>
       <Footer />
