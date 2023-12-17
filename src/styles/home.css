@@ -134,4 +134,7 @@ input {
   .home__hero-image .container .link-box a {
     margin: 0 10px;
   }
+  .home__hero-image .container h1 {
+    font-size: 6vw;
+  }
 }
