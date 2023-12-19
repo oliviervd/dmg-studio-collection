@@ -2,6 +2,7 @@ import { Header } from "../components/Header";
 import {
   fetchAllObjects,
   fetchObjectWithID,
+  checkIfKoepel,
 } from "../utils/hooks/filter/queries";
 import { useState, useRef } from "preact/hooks";
 
@@ -16,6 +17,7 @@ export function ObjectPage() {
   let _id = window.location.href.split("/")[4];
   if (_objects) {
     _object = fetchObjectWithID(_objects, _id);
+    console.log(_object);
   }
 
   function openImageModal(src) {

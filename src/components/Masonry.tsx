@@ -1,7 +1,7 @@
 import Masonry from "react-masonry-component";
-import { useState } from "preact/hooks";
+import { checkIfKoepel } from "../utils/hooks/filter/queries";
 
-export function ImageMasonry({ objects, loading, query, width }) {
+export function ImageMasonry({ objects, loading, query, width, parentsOnly }) {
   // masonry options
   const masonryOptions = {
     gutter: 20,
