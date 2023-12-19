@@ -94,8 +94,10 @@ export function Catalogue() {
             <div className={"toggle_switch"}>
               <input
                 type="checkbox"
+                id="show-parents"
                 onChange={() => setParentsOnly(!parentsOnly)}
               />
+              <label for="show-parents">show parts</label>
               <span class="slider round"></span>
             </div>
             <Pagination
