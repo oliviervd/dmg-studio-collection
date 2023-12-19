@@ -84,7 +84,7 @@ export function Catalogue() {
               <input
                 class={"slider"}
                 type="range"
-                step={"50"}
+                step={"20"}
                 min="200"
                 max="500"
                 id="widthRange"

@@ -44,6 +44,25 @@
   height: 34px;
 }
 
+.catalogue__results-slider {
+  display: flex;
+}
+
+input[type="range"],
+input[type="checkbox"] {
+  -webkit-appearance: none;
+  appearance: none;
+  accent-color: pink;
+  cursor: pointer;
+}
+
+input[type="range"]::-webkit-slider-runnable-track {
+}
+
+.toggle_switch {
+  display: flex;
+}
+
 @media (max-width: 600px) {
   .slider {
     display: none;
